@@ -1,0 +1,75 @@
+{
+    "app.js": {
+        "description": "Main entry point for the Notes API application. Sets up the Express server, defines routes, and starts the server.",
+        "dependencies": {
+            "controllers/noteController.js": [
+                "noteRouter"
+            ]
+        }
+    },
+    "controllers/noteController.js": {
+        "description": "Defines routes for CRUD operations on Notes.",
+        "dependencies": {
+            "services/noteService.js": [
+                "createNote",
+                "readNotes",
+                "readNote",
+                "updateNote",
+                "deleteNote"
+            ]
+        },
+        "exposes": [
+            "noteRouter"
+        ]
+    },
+    "services/noteService.js": {
+        "description": "Contains functions for performing CRUD operations on Notes using a CSV file.",
+        "dependencies": {
+            "dataAccess/noteDataAccess.js": [
+                "createNote",
+                "readNotes",
+                "readNote",
+                "updateNote",
+                "deleteNote"
+            ]
+        },
+        "exposes": [
+            "createNote",
+            "readNotes",
+            "readNote",
+            "updateNote",
+            "deleteNote"
+        ]
+    },
+    "dataAccess/noteDataAccess.js": {
+        "description": "Responsible for data storage and retrieval from a CSV file using csv-parser.",
+        "exposes": [
+            "createNote",
+            "readNotes",
+            "readNote",
+            "updateNote",
+            "deleteNote"
+        ]
+    },
+    "models/note.js": {
+        "description": "Represents a Note entity with id, title, and content properties."
+    },
+    "routes.js": {
+        "description": "Defines API routes for Notes using Express.js router."
+    },
+    "package.json": {
+        "description": "Package metadata and dependencies (Express.js and csv-parser)."
+    },
+    "README.md": {
+        "description": "README with basic documentation and 'how to run' guide"
+    },
+    ".gitignore": {
+        "description": ".gitignore with node-modules and cache files"
+    },
+    "run.sh": {
+        "description": "bash run script, should: install Node, init a project, install Express and csv-parser"
+    },
+    "notes.csv": {
+        "description": "CSV file for data storage."
+    }
+}

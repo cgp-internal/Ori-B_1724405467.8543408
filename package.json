@@ -1,0 +1,12 @@
+{
+  "name": "notes-api",
+  "version": "1.0.0",
+  "description": "Package metadata and dependencies (Express.js and csv-parser)",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "csv-parser": "^3.0.0"
+  }
+}
